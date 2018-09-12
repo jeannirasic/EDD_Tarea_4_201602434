@@ -37,6 +37,31 @@ void insertarArbol(nodo **n, int id){
     }
 }
 
+void recorridoInOrden(nodo *padre){
+    if(padre != NULL){
+        recorridoInOrden(padre->izquierdo);
+        printf("%i ", padre->id);
+        recorridoInOrden(padre->derecho);
+    }
+}
+
+void recorridoPreOrden(nodo *padre){
+    if(padre != NULL){
+        printf("%i ", padre->id);
+        recorridoPreOrden(padre->izquierdo);
+        recorridoPreOrden(padre->derecho);
+    }
+}
+
+void recorridoPostOrden(nodo *padre){
+    if(padre != NULL){
+        recorridoPostOrden(padre->izquierdo);
+        recorridoPostOrden(padre->derecho);
+        printf("%i ", padre->id);
+    }
+}
+
+
 
 int main()
 {
